@@ -26,6 +26,10 @@ services:
     ports:
       - 9002:80
     restart: unless-stopped
+    environment:
+      - API_URL=http://localhost:8080/graphql/
+      - APPS_MARKETPLACE_API_URL=https://apps.saleor.io/api/v2/saleor-apps
+      - EXTENSIONS_API_URL=https://apps.saleor.io/api/v1/extensions
 
   db:
     image: library/postgres:15-alpine
